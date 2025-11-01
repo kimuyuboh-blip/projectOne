@@ -1,0 +1,1 @@
+any reusable components are kept in the common folder.

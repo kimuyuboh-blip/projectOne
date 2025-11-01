@@ -1,0 +1,17 @@
+Layout begins with the hero section. 
+Here is where navigation and header enters.
+
+2. is features44
+
+3. is section 4-1
+
+4. is section 4-2
+
+5. is allProduct
+
+6. is testimonials
+
+7. is cta
+
+8. is footer
+
