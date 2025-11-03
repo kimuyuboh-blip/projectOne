@@ -29,7 +29,7 @@ export default function Header() {
             alt="Logo of Kimuyu TechWorks."
             className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="text-xl font-semibold tracking-wide text-gray-900">
+          <span className="text-xl font-semibold tracking-wide text-blue-600">
             Kimuyu TechWorks
           </span>
         </a>

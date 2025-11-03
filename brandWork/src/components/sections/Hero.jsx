@@ -21,10 +21,10 @@ function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-slate-100 via-gray-300 to-slate-100 bg-clip-text text-transparent drop-shadow-lg">
-          Fix it Right.
-        </h1><br />
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-slate-100 via-gray-300 to-slate-100 bg-clip-text text-transparent drop-shadow-lg">
           Fix it Fast.
+        </h1>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-slate-100 via-gray-300 to-slate-100 bg-clip-text text-transparent drop-shadow-lg">
+          Fix it Right.
         </h1>
 
 
