@@ -1,6 +1,6 @@
 function section2() {
     return (
-      <section>
+      <section id="about">
         <div>
           <h2>About Kimuyu TechWorks</h2>
           <p>Kimuyu TechWorks was founded with a single focus — precision-driven device repair grounded in engineering discipline. Every process, from diagnostics to testing, follows structured methods designed to ensure performance and reliability.</p>

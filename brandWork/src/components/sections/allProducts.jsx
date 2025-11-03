@@ -1,6 +1,6 @@
 function allProducts() {
     return (
-        <div>
+        <div id="services">
             <h2>Our Repair Solutions</h2>
             <h4>Phone Repair Services.</h4>
             <ol>
@@ -38,3 +38,5 @@ function allProducts() {
         </div>
     )
 }
+
+export default allProducts

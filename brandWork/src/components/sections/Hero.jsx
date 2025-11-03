@@ -1,15 +1,15 @@
 function Hero() {
     return (
-        <section className="hero">
+        <section id="hero" className="hero">
             <div className="hero-content">
                 <h1>Fast Repairs. Lasting Performance.</h1>
-                <p>Certified device technician delivering precision diagnostics and
-                    repairs that restore reliability, speed and lifespan to your tech.
+                <p>Certified device technicians delivering precise diagnosis and
+                    repairs that restore reliability, speed and lifespan.
                 </p>
+
                 <div className="hero-buttons">
-                    <button className="primary-button">Book A Review</button>
-                    <button className="secondary-button">View Services</button>
-                </div>
+                    <button className="primary-button">Book Repair</button>
+                </div>          
             </div>
 
             <table>

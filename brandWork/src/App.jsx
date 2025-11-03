@@ -1,3 +1,4 @@
+import './App.css'
 import Header from './components/layout/Header.jsx'
 import Hero from './components/sections/Hero.jsx'
 import Feature from './components/sections/Feature.jsx' 
@@ -7,7 +8,7 @@ import AllProducts from './components/sections/allProducts.jsx'
 import Testimonials from './components/sections/Testimonials.jsx'
 import CTA from './components/sections/CTA.jsx'
 import Footer from './components/layout/Footer.jsx'
-import './App.css'
+
 
 
 function App() {
