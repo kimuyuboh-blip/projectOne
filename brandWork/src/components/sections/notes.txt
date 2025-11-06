@@ -1,11 +1,13 @@
 Layout begins with the hero section. 
-Here is where navigation and header enters.
+Here is where navigation and header enters. 
+****REMEMBER TO MAKE IT NICE TO APPEAR IN BOTH LIGHT AND DARK MODE.
+    ALSO MOBILE MODE IS A BIT OFF.***
 
-2. is features44
+2. is features
 
-3. is section 4-1
+3. is section 1
 
-4. is section 4-2
+4. is section 2
 
 5. is allProduct
 
