@@ -47,7 +47,7 @@ export default function Header() {
             About Us
             <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#contact" className="relative group">
+          <a href="#footer" className="relative group">
             Contact
             <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
           </a>
@@ -72,7 +72,7 @@ export default function Header() {
           <a href="#hero" onClick={() => setIsOpen(false)}>Home</a>
           <a href="#services" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#about" onClick={() => setIsOpen(false)}>About Us</a>
-          <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
+          <a href="#footer" onClick={() => setIsOpen(false)}>Contact</a>
         </nav>
       </div>
     </header>

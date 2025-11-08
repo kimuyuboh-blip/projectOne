@@ -33,6 +33,9 @@ function Hero() {
         </p>
 
         <motion.button
+          onClick={() => {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+          }}
           whileHover={{
             scale: 1.08,
             boxShadow: "0px 0px 15px rgba(192,192,192,0.6)",

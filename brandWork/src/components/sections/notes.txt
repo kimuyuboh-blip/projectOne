@@ -1,19 +1,15 @@
-Layout begins with the hero section. 
-Here is where navigation and header enters. 
 ****REMEMBER TO MAKE IT NICE TO APPEAR IN BOTH LIGHT AND DARK MODE.
-    ALSO MOBILE MODE IS A BIT OFF.***
+    ALSO MOBILE MODE IS A BIT OFF.
+    let the measurements abide with the original***
 
-2. is features
 
-3. is section 1
 
-4. is section 2
+3. is section 1: let the text be on the left while the tiles to the right and to be scrollable to the right.
 
-5. is allProduct
 
-6. is testimonials
 
-7. is cta
+5. is allProduct: add images relevant to the original and your context in groups of 4 totaling 8 in one page and arrows to shift left n right.
 
-8. is footer
+
+then begin to work on the backend linked with the cta section.
 
