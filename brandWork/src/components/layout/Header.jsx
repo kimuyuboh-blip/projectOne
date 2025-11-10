@@ -3,58 +3,66 @@ import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [showBackground, setShowBackground] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show white background only when scrolling UP (and past top)
+      if (currentScrollY < lastScrollY && currentScrollY > 30) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
+        showBackground
+          ? "bg-white/80 dark:bg-[#1E1E1E]/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a
-          href="#hero"
-          className="flex items-center gap-2 group"
-        >
-          <img
-            src="./src/assets/logo/logo.png"
-            alt="Logo of Kimuyu TechWorks."
-            className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-          />
-          <span className="text-xl font-semibold tracking-wide text-blue-600">
+        {/* Logo + Brand */}
+        <a href="#hero" className="flex items-center gap-2 group">
+          <span className="text-xl font-semibold tracking-wide text-[#3A9BD9] dark:text-[#1DE9B6] h-10 w-auto transition-transform duration-300 group-hover:scale-105">
             Kimuyu TechWorks
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 text-gray-800 font-medium">
-          <a href="#hero" className="relative group">
-            Home
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="#services" className="relative group">
-            Services
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="#about" className="relative group">
-            About Us
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="#footer" className="relative group">
-            Contact
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </a>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 font-medium text-[#3A9BD9] dark:text-[#1DE9B6]">
+          {["Home", "Services", "About Us", "Contact"].map((item, index) => {
+            const href =
+              item === "Home"
+                ? "#hero"
+                : item === "Services"
+                ? "#services"
+                : item === "About Us"
+                ? "#about"
+                : "#footer";
+            return (
+              <a key={index} href={href} className="relative group">
+                {item}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-[#3A9BD9] dark:bg-[#1DE9B6] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            );
+          })}
         </nav>
 
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden text-[#3A9BD9] dark:text-[#1DE9B6]"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation"
         >
@@ -64,11 +72,11 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-2/3 bg-white/95 backdrop-blur-lg shadow-lg transform transition-transform duration-300 ${
+        className={`md:hidden fixed top-0 right-0 h-full w-2/3 bg-white/95 dark:bg-[#2C2C2C]/95 backdrop-blur-lg shadow-lg transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col items-start p-6 space-y-6 text-gray-800 font-semibold text-lg">
+        <nav className="flex flex-col items-start p-6 space-y-6 font-semibold text-lg text-[#3A9BD9] dark:text-[#1DE9B6]">
           <a href="#hero" onClick={() => setIsOpen(false)}>Home</a>
           <a href="#services" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#about" onClick={() => setIsOpen(false)}>About Us</a>
@@ -78,4 +86,3 @@ export default function Header() {
     </header>
   );
 }
-

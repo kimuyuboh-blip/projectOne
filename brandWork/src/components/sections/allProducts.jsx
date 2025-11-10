@@ -1,6 +1,6 @@
 function allProducts() {
     return (
-        <div id="services">
+        <div id="services" className="w-full">
             <h2>Our Repair Solutions</h2>
             <h4>Phone Repair Services.</h4>
             <ol>

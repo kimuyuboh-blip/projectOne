@@ -9,8 +9,8 @@ import img4 from "/src/assets/testimonials/4.jpg";
 export default function Testimonials() {
   const testimonials = [
     {
-      text: "My phone had charging issues that two other shops couldn’t fix. Kimuyu TechWorks diagnosed a board fault and repaired it within 24 hours. The precision and professionalism were unmatched. Charging stability fully restored — verified through two weeks of testing.",
       author: "Brian Otieno — Samsung S22",
+      text: "My phone had charging issues that two other shops couldn’t fix. Kimuyu TechWorks diagnosed a board fault and repaired it within 24 hours. The precision and professionalism were unmatched. Charging stability fully restored — verified through two weeks of testing.",
       img: img1,
     },
     {
@@ -43,12 +43,19 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white overflow-hidden"
+      className="relative w-full py-20 px-6 md:px-16 lg:px-24 
+      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0]
+      dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E]
+      text-[#1E1E1E] dark:text-[#F1F1F1] overflow-hidden transition-colors duration-500"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
         {/* Left: Testimonial Content */}
-        <div className="lg:col-span-7 relative">
-          <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-slate-100 via-gray-400 to-slate-200 bg-clip-text text-transparent tracking-tight mb-6">
+        <div className="lg:col-span-7 flex flex-col justify-center relative">
+          <h2
+            className="text-3xl md:text-4xl font-extrabold 
+            bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
+            bg-clip-text text-transparent tracking-tight mb-6"
+          >
             What Clients Say About Us
           </h2>
 
@@ -62,15 +69,17 @@ export default function Testimonials() {
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="space-y-6"
             >
-              <blockquote className="border-l-4 border-slate-600 pl-5">
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  “{testimonials[index].text}”
+              <blockquote>
+                <p className="text-[#505050] dark:text-[#B5B5B5] leading-relaxed text-lg text-justify">
+                  "{testimonials[index].text}"
                 </p>
-                <footer className="text-sm text-gray-500 mt-3">{testimonials[index].author}</footer>
+                <footer className="text-sm text-[#808080] dark:text-[#888888] mt-3 text-justify">
+                  {testimonials[index].author}
+                </footer>
               </blockquote>
 
-              <p className="text-gray-400 italic text-sm">
-                “Every client, every device, every detail — verified precision.”
+              <p className="text-[#505050] dark:text-[#B5B5B5] italic text-sm text-justify">
+                "Every client, every device, every detail — verified precision."
               </p>
             </motion.div>
           </AnimatePresence>
@@ -79,15 +88,21 @@ export default function Testimonials() {
           <div className="flex items-center gap-6 mt-10">
             <button
               onClick={prev}
-              className="p-3 rounded-full border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300"
+              className="p-3 rounded-full border border-[#D0D0D0] dark:border-[#3D3D3D] 
+              hover:border-[#3A9BD9] dark:hover:border-[#1DE9B6] 
+              hover:bg-[#F5F5F5] dark:hover:bg-[#3D3D3D]/40 
+              transition-all duration-300"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-300" />
+              <ChevronLeft className="w-6 h-6 text-[#3A9BD9] dark:text-[#1DE9B6]" />
             </button>
             <button
               onClick={next}
-              className="p-3 rounded-full border border-gray-700 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300"
+              className="p-3 rounded-full border border-[#D0D0D0] dark:border-[#3D3D3D] 
+              hover:border-[#3A9BD9] dark:hover:border-[#1DE9B6] 
+              hover:bg-[#F5F5F5] dark:hover:bg-[#3D3D3D]/40 
+              transition-all duration-300"
             >
-              <ChevronRight className="w-6 h-6 text-gray-300" />
+              <ChevronRight className="w-6 h-6 text-[#3A9BD9] dark:text-[#1DE9B6]" />
             </button>
           </div>
         </div>
@@ -99,20 +114,27 @@ export default function Testimonials() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -60 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="lg:col-span-5 flex justify-center lg:justify-end"
+          className="lg:col-span-5 flex justify-center lg:justify-end h-full"
         >
-          <div className="w-full max-w-md rounded-3xl overflow-hidden shadow-2xl border border-gray-800/60 transform transition-transform duration-500 hover:scale-105">
+          <div className="w-full h-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden 
+          shadow-2xl border border-[#C0C0C0]/40 dark:border-[#3D3D3D]/70 
+          transform transition-transform duration-500 hover:scale-[1.03]">
             <img
               src={testimonials[index].img}
               alt={`Client testimonial image ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
         </motion.div>
       </div>
 
-      {/* Ambient Glow */}
-      <div className="absolute -bottom-24 right-8 w-64 h-64 bg-slate-400/10 blur-[100px] rounded-full pointer-events-none"></div>
+      {/* Decorative Glow */}
+      <div
+        className="absolute -bottom-24 right-8 w-64 h-64 
+        bg-gradient-to-tr from-[#3A9BD9]/20 to-[#1DE9B6]/20 
+        dark:from-[#3A9BD9]/10 dark:to-[#1DE9B6]/10 
+        blur-[100px] rounded-full pointer-events-none"
+      ></div>
     </section>
   );
 }

@@ -25,7 +25,7 @@ function CTA() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 md:px-12 bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white overflow-hidden"
+      className="relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white overflow-hidden"
     >
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-slate-400/10 blur-[100px] rounded-full pointer-events-none"></div>

@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import sectionImg from "/src/assets/section2.jpeg";
+import sectionImg from "/src/assets/section.jpg";
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-20 px-6 md:px-16 lg:px-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white overflow-hidden"
+      className="relative w-full py-20 px-6 md:px-16 lg:px-24 
+      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
+      dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E] 
+      text-[#1E1E1E] dark:text-[#F1F1F1] transition-colors duration-500 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         {/* Left: Text */}
@@ -13,73 +16,26 @@ export default function AboutSection() {
           className="lg:col-span-7 space-y-6"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-slate-100 via-gray-400 to-slate-200 bg-clip-text text-transparent tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-extrabold 
+            bg-gradient-to-r from-cyan-300 via-blue-400 to-teal-400 
+            dark:from-slate-100 dark:via-gray-400 dark:to-slate-200 
+            bg-clip-text text-transparent tracking-tight">
             About Us
           </h2>
 
-          <p className="text-gray-300 text-base md:text-lg max-w-3xl leading-relaxed">
-            Kimuyu TechWorks was founded to deliver device repair solutions with transparency and engineering discipline,
-            closing the trust gap at pocket-friendly rates. We prioritize measurable results and documented process over guesswork.
+          <p className="text-[#505050] dark:text-[#B5B5B5] text-lg leading-relaxed text-justify">
+            Kimuyu TechWorks was founded to deliver device repair solutions with transparency 
+            and engineering precision — bridging the gap between trust and technology at 
+            pocket-conscious rates. Every fix follows a documented diagnostic framework 
+            designed for consistency, reliability, and repeatable quality.
           </p>
 
-          <h3 className="text-xl font-semibold">Founder Statement</h3>
-          <p className="text-gray-300 leading-relaxed max-w-3xl">
-            Behind Kimuyu TechWorks is <strong>Carlos Kimuyu</strong>, a certified phone and laptop technician with a background
-            in electronics, systems repair, and programming. He applies systems thinking and disciplined methods to every repair.
+          <p className="text-cyan-400/90 dark:text-teal-400/80 italic">
+            “Where craftsmanship meets engineering discipline.”
           </p>
-
-          <h3 className="text-xl font-semibold">Core Philosophy</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <motion.div
-              className="group bg-white/5 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-4 transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.05 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-extrabold">Precision</div>
-              <div className="mt-2 text-sm text-gray-400">
-                Each repair is treated as an engineering task — measurable, traceable, and verifiable.
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="group bg-white/5 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-4 transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.12 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-extrabold">Integrity</div>
-              <div className="mt-2 text-sm text-gray-400">
-                No speculative fixes, no unnecessary replacements — recommendations backed by diagnostics.
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="group bg-white/5 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-4 transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-lg font-extrabold">Restoration</div>
-              <div className="mt-2 text-sm text-gray-400">
-                Objective: restore full system functionality and extend performance lifespan.
-              </div>
-            </motion.div>
-          </div>
-
-          <h3 className="text-xl font-semibold mt-1">Mission Statement</h3>
-          <p className="text-gray-300 leading-relaxed max-w-3xl">
-            To redefine local repair standards by delivering professional-grade service with transparency, structure,
-            and consistent technical excellence.
-          </p>
-
-          <p className="text-gray-400 italic">“Where craftsmanship meets engineering discipline.”</p>
         </motion.div>
 
         {/* Right: Image */}
@@ -87,24 +43,28 @@ export default function AboutSection() {
           className="lg:col-span-5 flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
+          transition={{ duration: 0.9, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
-          <div className="w-full max-w-sm lg:max-w-md rounded-3xl overflow-hidden shadow-2xl border border-gray-800/60 transform transition-transform duration-500 hover:scale-102">
+          <div className="relative w-full max-w-sm lg:max-w-md rounded-3xl overflow-hidden 
+            shadow-2xl border border-gray-800/60 dark:border-gray-700/50 
+            bg-gradient-to-br from-gray-900/80 via-gray-950/90 to-black/95 
+            dark:from-gray-900/80 dark:via-gray-950/90 dark:to-black/95 
+            group transform transition-transform duration-500 hover:scale-[1.02]">
             <img
               src={sectionImg}
-              alt="An open Samsung A14 phone."
-              className="w-full h-full object-cover block"
+              alt="An open Samsung s10 phone."
+              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
-            <div className="p-4 bg-gradient-to-t from-black/50 to-transparent text-gray-200">
-              <div className="text-sm font-semibold">Device Focus</div>
-              <div className="text-xs text-gray-400 mt-1">Component-level rework & diagnostics</div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+           
           </div>
         </motion.div>
       </div>
 
-      <div className="absolute -top-24 left-8 w-56 h-56 bg-slate-400/6 blur-[80px] rounded-full pointer-events-none"></div>
+      {/* Decorative Glow */}
+      <div className="absolute -top-24 left-8 w-56 h-56 bg-cyan-400/10 blur-[90px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 right-12 w-64 h-64 bg-teal-400/10 blur-[120px] rounded-full pointer-events-none"></div>
     </section>
   );
 }

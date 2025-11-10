@@ -32,7 +32,7 @@ function section1() {
   ];
 
   return (
-    <section className="relative py-24 px-6 md:px-16 lg:px-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white overflow-hidden">
+    <section className="relative w-full py-24 px-6 md:px-16 lg:px-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white overflow-hidden">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <motion.h2
           className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-slate-100 via-gray-400 to-slate-200 bg-clip-text text-transparent tracking-tight"
