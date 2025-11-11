@@ -7,22 +7,16 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show white background only when scrolling UP (and past top)
-      if (currentScrollY < lastScrollY && currentScrollY > 30) {
-        setShowBackground(true);
-      } else {
-        setShowBackground(false);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
+  let lastY = 0;
+  const onScroll = () => {
+    const y = window.scrollY;
+    setShowBackground(y < lastY && y > 30);
+    lastY = y;
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
   return (
     <header

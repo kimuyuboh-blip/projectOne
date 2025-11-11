@@ -1,162 +1,86 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, UserPlus, LogIn } from "lucide-react";
+import logo from "/src/assets/logo/logo.png";
 
-function CTA() {
-  const [isLogin, setIsLogin] = useState(true);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+export default function CTA() {
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    console.log("Subscribed:", email);
   };
 
   return (
     <section
-      id="contact"
-      className="relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white overflow-hidden"
+      className="relative flex flex-col md:flex-row items-center justify-center md:justify-between w-full
+      bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9]
+      dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E]
+      text-[#1E1E1E] dark:text-[#F1F1F1]
+      py-20 px-8 md:px-20 overflow-hidden transition-colors duration-500"
     >
-      {/* Background Glow */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-slate-400/10 blur-[100px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+      {/* Left Logo */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0"
+      >
+        <img
+          src={logo}
+          alt="Kimuyu TechWorks logo"
+          className="w-3/4 md:w-[70%] h-auto object-contain filter drop-shadow-xl"
+        />
+      </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-lg mx-auto backdrop-blur-xl bg-white/10 border border-gray-700/40 rounded-3xl p-10 shadow-2xl hover:shadow-gray-800/50 transition-all duration-500">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-8"
-        >
-          <div className="flex justify-center mb-4">
-            {isLogin ? (
-              <LogIn className="w-10 h-10 text-gray-300" />
-            ) : (
-              <UserPlus className="w-10 h-10 text-gray-300" />
-            )}
-          </div>
+      {/* Right Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="w-full md:w-1/2 text-center md:text-left"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-3 text-[#1E1E1E] dark:text-[#F1F1F1]">
+          Unlock exclusive discounts on  <br />
+          <span className="text-[#2C2C2C]/80 dark:text-[#B5B5B5]/90">
+          phone services and repairs!
+          </span>
+        </h2>
 
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-slate-100 via-gray-300 to-slate-200 bg-clip-text text-transparent mb-3">
-            {isLogin ? "Welcome Back" : "Join Kimuyu TechWorks"}
-          </h2>
-          <p className="text-gray-400 text-sm">
-            {isLogin
-              ? "Access your dashboard and manage device repairs."
-              : "Create an account to track and schedule your repairs."}
-          </p>
-        </motion.div>
-
-        {/* Form */}
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="space-y-5"
-        >
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold text-gray-300 mb-1"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="block w-full px-4 py-2.5 bg-black/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-slate-400 focus:outline-none text-gray-100 placeholder-gray-400"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-semibold text-gray-300 mb-1"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="block w-full px-4 py-2.5 bg-black/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-slate-400 focus:outline-none text-gray-100 placeholder-gray-400"
-              placeholder="Enter your password"
-              required
-            />
-          </div>
-
-          {!isLogin && (
-            <div>
-              <label
-                htmlFor="confirmPassword"
-                className="block text-sm font-semibold text-gray-300 mb-1"
-              >
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="block w-full px-4 py-2.5 bg-black/50 border border-gray-600 rounded-xl focus:ring-2 focus:ring-slate-400 focus:outline-none text-gray-100 placeholder-gray-400"
-                placeholder="Re-enter your password"
-                required
-              />
-            </div>
-          )}
-
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 0px 20px rgba(192,192,192,0.6)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            type="submit"
-            className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 border border-gray-500/40 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300"
-          >
-            {isLogin ? "Log In" : "Sign Up"}
-          </motion.button>
-
-          <div className="text-center mt-6">
-            <button
-              type="button"
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-slate-300 hover:text-white font-medium transition-all duration-200"
-            >
-              {isLogin
-                ? "Don't have an account? Sign up"
-                : "Already have an account? Log in"}
-            </button>
-          </div>
-        </motion.form>
-
-        {/* Footer */}
-        <p className="mt-10 text-center text-xs text-gray-500 italic">
-          <Lock className="inline-block w-4 h-4 mr-1 text-gray-500" />
-          Secure access powered by Kimuyu TechWorks Systems.
+        <p className="text-[#1E1E1E] dark:text-[#B5B5B5]/80 mb-8 text-lg">
+          Join our{" "}
+          <span>
+            mailing list
+          </span>
         </p>
-      </div>
+
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-0"
+        >
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Your email address"
+            required
+            className="w-full sm:w-[65%] px-5 py-3 rounded-lg mr-5
+            text-[#1E1E1E] placeholder-[#1E1E1E]
+            focus:outline-none focus:ring-2
+            focus:ring-[#F1F1F1] dark:focus:ring-[#F1F1F1]
+            dark:bg-[#2C2C2C] dark:text-[#F1F1F1] transition-all duration-300 bg-[#F1F1F1]"
+          />
+
+          <button
+            type="submit"
+            className="w-full sm:w-[35%] bg-[#1E1E1E] dark:bg-[#F1F1F1]
+            hover:bg-[#1DE9B6] dark:hover:bg-[#3A9BD9]
+            text-white font-semibold py-3
+            rounded-lg  transition-all duration-300"
+          >
+            Shop Now
+          </button>
+        </form>
+      </motion.div>
     </section>
   );
 }
-
-export default CTA;

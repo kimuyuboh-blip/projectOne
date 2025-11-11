@@ -48,9 +48,9 @@ export default function Testimonials() {
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E]
       text-[#1E1E1E] dark:text-[#F1F1F1] overflow-hidden transition-colors duration-500"
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left: Testimonial Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center relative">
+        <div className="lg:col-span-7 flex flex-col justify-start relative">
           <h2
             className="text-3xl md:text-4xl font-extrabold 
             bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
@@ -70,12 +70,22 @@ export default function Testimonials() {
               className="space-y-6"
             >
               <blockquote>
+                {/* === ADDED SECTION START === */}
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src={testimonials[index].img}
+                    alt={testimonials[index].author}
+                    className="w-12 h-12 rounded-full object-cover border border-[#C0C0C0]/50 dark:border-[#3D3D3D]/70 shadow-md"
+                  />
+                  <span className="text-sm md:text-base font-semibold text-[#3A9BD9] dark:text-[#1DE9B6]">
+                    {testimonials[index].author}
+                  </span>
+                </div>
+                {/* === ADDED SECTION END === */}
+
                 <p className="text-[#505050] dark:text-[#B5B5B5] leading-relaxed text-lg text-justify">
                   "{testimonials[index].text}"
                 </p>
-                <footer className="text-sm text-[#808080] dark:text-[#888888] mt-3 text-justify">
-                  {testimonials[index].author}
-                </footer>
               </blockquote>
 
               <p className="text-[#505050] dark:text-[#B5B5B5] italic text-sm text-justify">
@@ -114,9 +124,9 @@ export default function Testimonials() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -60 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="lg:col-span-5 flex justify-center lg:justify-end h-full"
+          className="lg:col-span-5 flex justify-center lg:justify-end self-start"
         >
-          <div className="w-full h-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden 
+          <div className="w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden 
           shadow-2xl border border-[#C0C0C0]/40 dark:border-[#3D3D3D]/70 
           transform transition-transform duration-500 hover:scale-[1.03]">
             <img

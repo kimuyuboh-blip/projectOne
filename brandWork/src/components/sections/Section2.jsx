@@ -20,9 +20,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold 
-            bg-gradient-to-r from-cyan-300 via-blue-400 to-teal-400 
-            dark:from-slate-100 dark:via-gray-400 dark:to-slate-200 
-            bg-clip-text text-transparent tracking-tight">
+            bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent tracking-tight">
             About Us
           </h2>
 

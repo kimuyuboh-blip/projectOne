@@ -68,10 +68,10 @@ function Hero() {
         >
           <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/20 dark:divide-[#3D3D3D]">
             {[
+              { title: "9,000+", subtitle: "Phones Repaired" },
+              { title: "1000+", subtitle: "Laptops Repaired" },
               { title: "9", subtitle: "Year Experince" },
-              { title: "0$", subtitle: "Free Diagnostics" },
-              { title: "1000+", subtitle: "Devices repaired" },
-              { title: "24H", subtitle: "Same Day Repair" },
+              { title: "83%", subtitle: "Customer Satisfaction" },
             ].map((item, idx) => (
               <div
                 key={idx}
