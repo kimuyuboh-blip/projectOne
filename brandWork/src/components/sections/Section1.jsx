@@ -34,8 +34,8 @@ export default function Section1() {
             Your trust is our priority.
           </p>
 
-          <div id="services">
-            <a href="#services" onClick={() => setIsOpen(false)}><button 
+          <div id="products">
+            <a href="#products" onClick={() => setIsOpen(false)}><button 
             className="flex items-center gap-2 text-[#1E1E1E] dark:text-[#F1F1F1 hover:text-[#3A9BD9] transition-colors">
             <span className="underline underline-offset-4">Check All</span>
             <ArrowRight className="w-5 h-5" />

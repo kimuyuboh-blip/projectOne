@@ -41,7 +41,7 @@ export default function Header() {
               item === "Home"
                 ? "#hero"
                 : item === "Services"
-                ? "#services"
+                ? "#features"
                 : item === "About Us"
                 ? "#about"
                 : "#footer";
@@ -70,9 +70,9 @@ export default function Header() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col items-start p-6 space-y-6 font-semibold text-lg text-[#3A9BD9] dark:text-[#1DE9B6]">
+        <nav className="flex flex-col items-start p-6 space-y-6 font-semibold text-lg bg-gradient-to-r from-[#1DE9B6] via-[#3A9BD9] to-[#1DE9B6]">
           <a href="#hero" onClick={() => setIsOpen(false)}>Home</a>
-          <a href="#services" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="#features" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#about" onClick={() => setIsOpen(false)}>About Us</a>
           <a href="#footer" onClick={() => setIsOpen(false)}>Contact</a>
         </nav>

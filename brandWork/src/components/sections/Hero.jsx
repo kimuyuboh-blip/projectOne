@@ -33,7 +33,8 @@ function Hero() {
         </p>
 
         {/* CTA Button */}
-        <motion.button
+        <a href="#contact">
+          <motion.button
           onClick={() =>
             document
               .getElementById("contact")
@@ -49,9 +50,10 @@ function Hero() {
             dark:from-[#00B8C9] dark:to-[#1DE9B6]
             hover:from-[#1DE9B6] hover:to-[#3A9BD9]
             border border-white/20 shadow-md"
-        >
-          Book Repair
+        >Book Repair
         </motion.button>
+        </a>
+        
       </motion.div>
 
       {/* Feature Grid - Single Box with Separators */}

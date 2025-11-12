@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 
 export default function AllProducts() {
   const products = [
-    { name: "Ceiling Light", price: "$75.00", oldPrice: "$93.00", img: "/src/assets/products/light.png" },
-    { name: "Wood Chair", price: "$50.00", oldPrice: "$70.00", img: "/src/assets/products/chair.png" },
-    { name: "Papper Cupboard", price: "$105.00", oldPrice: "$129.00", img: "/src/assets/products/cupboard.png" },
-    { name: "Ole Gundorse Spring Bed", price: "$82.00", oldPrice: "$105.00", img: "/src/assets/products/bed.png" },
-    { name: "Treos Seroes 911", price: "$300.00", oldPrice: "$395.00", img: "/src/assets/products/box.png" },
-    { name: "Multi Bilderman Slubber", price: "$45.00", oldPrice: "$59.00", img: "/src/assets/products/frame.png" },
-    { name: "XORA Corner Desk", price: "$320.00", oldPrice: "$375.00", img: "/src/assets/products/desk.png" },
-    { name: "Black Forest Series Wood Crib", price: "$225.00", oldPrice: "$249.00", img: "/src/assets/products/crib.png" },
+    { name: "Internal Battery", price: "Ksh 1500", oldPrice: "Ksh 1800", img: "/src/assets/products/battery.jpg" },
+    { name: "Camera Glass", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/products/camera-glass.jpg" },
+    { name: "Camera", price: "Ksh 1000", oldPrice: "Ksh 1500", img: "/src/assets/products/camera.jpg" },
+    { name: "Charging Plate", price: "Ksh 800", oldPrice: "Ksh 1000", img: "/src/assets/products/charging-plate.jpg" },
+    { name: "Earpiece", price: "Ksh 400", oldPrice: "Ksh 600", img: "/src/assets/products/earpiece.jpg" },
+    { name: "Sim Tray", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/products/simtray.jpeg" },
+    { name: "Complete Screen", price: "Ksh 2000", oldPrice: "Ksh 2500", img: "/src/assets/products/screen.jpg" },
+    { name: "Keypad Screen", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/products/tululu.jpg" },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function AllProducts() {
           Our Products
         </h2>
         <p className="text-[#505050] dark:text-[#B5B5B5] max-w-sm leading-relaxed mx-auto">
-          We work to provide high quality repairs at pocket friendly prices.
+          We work to provide high quality repairs at pocket friendly prices. <br /> We can fix more than these.
         </p>
       </motion.div>
 
@@ -99,16 +99,16 @@ export default function AllProducts() {
         className="flex justify-center items-center gap-6 mt-16"
       >
         <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#3A9BD9]/50 hover:bg-[#3A9BD9]/20 transition-all">
-          <span className="text-lg text-[#3A9BD9]">←</span>
+          <span className="text-lg text-[#505050]">←</span>
         </button>
         <div className="flex gap-2">
           <span className="w-2.5 h-2.5 bg-gradient-to-r from-[#3A9BD9] to-[#1DE9B6] rounded-full"></span>
-          <span className="w-2.5 h-2.5 bg-white/30 rounded-full"></span>
-          <span className="w-2.5 h-2.5 bg-white/30 rounded-full"></span>
-          <span className="w-2.5 h-2.5 bg-white/30 rounded-full"></span>
+          <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
+          <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
+          <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
         </div>
-        <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#1DE9B6]/50 hover:bg-[#1DE9B6]/20 transition-all">
-          <span className="text-lg text-[#1DE9B6]">→</span>
+        <button className="w-10 h-10 flex items-center justify-center rounded-full border border-[#3A9BD9]/50 hover:bg-[#3A9BD9]/20 transition-all">
+          <span className="text-lg text-[#505050]">→</span>
         </button>
       </motion.div>
     </section>
