@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import img1 from "/src/assets/testimonials/1.avif";
-import img2 from "/src/assets/testimonials/2.jpg";
-import img3 from "/src/assets/testimonials/3.jpg";
-import img4 from "/src/assets/testimonials/4.jpg";
+import img1 from "/src/assets/testimonials/1.webp";
+import img2 from "/src/assets/testimonials/2.webp";
+import img3 from "/src/assets/testimonials/3.webp";
+import img4 from "/src/assets/testimonials/4.webp";
 
 function Testimonials() {
   const testimonials = [

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import featureImg from "../../assets/feature.jpg";
+import featureImg from "../../assets/feature.webp";
 
 function Feature() {
   return (

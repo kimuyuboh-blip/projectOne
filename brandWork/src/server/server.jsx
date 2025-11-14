@@ -97,7 +97,7 @@ function CTA() {
             )}
           </div>
 
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-[#3A9BD9] via-[#00B8C9] to-[#1DE9B6] bg-clip-text text-transparent mb-3">
+          <h2 className="text-3xl font-extrabold bg-linear-to-r from-[#3A9BD9] via-[#00B8C9] to-[#1DE9B6] bg-clip-text text-transparent mb-3">
             {isLogin ? "Welcome Back" : "Join Kimuyu TechWorks"}
           </h2>
           <p className="text-[#505050] dark:text-[#B5B5B5] text-sm">

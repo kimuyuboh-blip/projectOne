@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import logo from "/src/assets/logo/logo.png";
+import logo from "/src/assets/logo/logo.webp";
 
 function CTA() {
   const [email, setEmail] = useState("");

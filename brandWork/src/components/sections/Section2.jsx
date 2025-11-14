@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sectionImg from "/src/assets/section.jpg";
+import sectionImg from "/src/assets/section.webp";
 
 function AboutSection() {
   return (
