@@ -1,8 +1,9 @@
+import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "/src/assets/logo/logo.png";
 
-export default function CTA() {
+function CTA() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -84,3 +85,5 @@ export default function CTA() {
     </section>
   );
 }
+
+export default React.memo(CTA);

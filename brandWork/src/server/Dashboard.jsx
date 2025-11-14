@@ -1,8 +1,9 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { LogOut } from "lucide-react";
 
-export default function Dashboard() {
+function Dashboard() {
   const [user, setUser] = useState(null);
 
   // Fetch protected user info
@@ -92,3 +93,5 @@ export default function Dashboard() {
     </section>
   );
 }
+
+export default React.memo(Dashboard);

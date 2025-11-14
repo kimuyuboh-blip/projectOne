@@ -1,8 +1,9 @@
+import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, UserPlus, LogIn } from "lucide-react";
 
-export default function CTA() {
+function CTA() {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: "",
@@ -207,3 +208,5 @@ export default function CTA() {
     </section>
   );
 }
+
+export default React.memo(CTA);

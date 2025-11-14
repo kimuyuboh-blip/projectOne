@@ -1,7 +1,8 @@
+import React from "react";
 import { motion } from "framer-motion";
 import sectionImg from "/src/assets/section.jpg";
 
-export default function AboutSection() {
+function AboutSection() {
   return (
     <section
       id="about"
@@ -66,3 +67,5 @@ export default function AboutSection() {
     </section>
   );
 }
+
+export default React.memo(AboutSection);

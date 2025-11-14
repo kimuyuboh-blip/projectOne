@@ -1,18 +1,25 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 
-export default function Header() {
+function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
-  let lastY = 0;
   const onScroll = () => {
-    const y = window.scrollY;
-    setShowBackground(y < lastY && y > 30);
-    lastY = y;
-  };
+    if (!ticking.current) {
+        ticking.current = true;
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          setShowBackground(y < lastY.current && y > 30);
+          lastY.current = y;
+          ticking.current = false;
+  });
+  }
+};
   window.addEventListener("scroll", onScroll, { passive: true });
   return () => window.removeEventListener("scroll", onScroll);
 }, []);
@@ -80,3 +87,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default React.memo(Header);

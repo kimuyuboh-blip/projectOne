@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import heroBg from "/src/assets/background.jpg";
 
@@ -6,18 +7,20 @@ function Hero() {
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center text-center min-h-screen w-full bg-cover bg-center bg-no-repeat transition-colors duration-500 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundAttachment: "fixed",
-      }}
-    >
+    ><img 
+      src={heroBg}
+      alt="Image of a Technician opening a laptop backcase."
+      className="absolute inset-0 w-full h-full object-cover opacity-40"
+      loading="eager"
+      decoding="async" 
+      />
 
       {/* Main Content */}
       <motion.div
         className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.9 }}
       >
         {/* Headings */}
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(29,233,182,0.3)]">
@@ -59,9 +62,10 @@ function Hero() {
       {/* Feature Grid - Single Box with Separators */}
       <motion.div
         className="absolute bottom-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.3 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}        
+        transition={{ duration: 1, delay: 0.1 }}
       >
         <div
           className="bg-white/10 dark:bg-[#2C2C2C]/60 backdrop-blur-md rounded-2xl border border-white/20 dark:border-[#3D3D3D] shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
@@ -97,4 +101,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default React.memo(Hero);

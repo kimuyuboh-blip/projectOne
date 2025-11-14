@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import {
   FaWhatsapp,
@@ -8,7 +9,7 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 
-export default function Footer() {
+function Footer() {
   const [openSection, setOpenSection] = useState(null);
 
   const toggleSection = (index) => {
@@ -149,3 +150,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default React.memo(Footer);

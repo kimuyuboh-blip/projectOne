@@ -1,7 +1,8 @@
+import React from "react";
 import { Plus } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function AllProducts() {
+function AllProducts() {
   const products = [
     { name: "Internal Battery", price: "Ksh 1500", oldPrice: "Ksh 1800", img: "/src/assets/products/battery.jpg" },
     { name: "Camera Glass", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/products/camera-glass.jpg" },
@@ -114,3 +115,5 @@ export default function AllProducts() {
     </section>
   );
 }
+
+export default React.memo(AllProducts);

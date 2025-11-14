@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -6,7 +7,7 @@ import img2 from "/src/assets/testimonials/2.jpg";
 import img3 from "/src/assets/testimonials/3.jpg";
 import img4 from "/src/assets/testimonials/4.jpg";
 
-export default function Testimonials() {
+function Testimonials() {
   const testimonials = [
     {
       author: "Brian Otieno — Samsung S22",
@@ -148,3 +149,5 @@ export default function Testimonials() {
     </section>
   );
 }
+
+export default React.memo(Testimonials);

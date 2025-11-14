@@ -1,7 +1,8 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export default function Section1() {
+function Section1() {
   const items = [
     { title: "Smartphone and Iphone Repair", img: "/src/assets/store/smartphone.jpg" },
     { title: "Screen Replacement", img: "/src/assets/store/screen.jpg" },
@@ -84,3 +85,5 @@ export default function Section1() {
     </section>
   );
 }
+
+export default React.memo(Section1);

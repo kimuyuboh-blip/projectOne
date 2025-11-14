@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import featureImg from "../../assets/feature.jpg";
 
@@ -13,15 +14,17 @@ function Feature() {
       {/* Image Section */}
       <motion.div
         className="relative w-full md:w-1/2 flex justify-center mb-10 md:mb-0"
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="relative group">
           <img
             src={featureImg}
             alt="Glowing advert of Mobile Phone Repair"
+            loading="lazy"
+            decoding="async"
             className="rounded-3xl shadow-2xl w-full max-w-sm object-cover 
             border border-[#C0C0C0]/40 dark:border-[#3D3D3D]/70 
             group-hover:scale-105 transition-transform duration-500"
@@ -35,9 +38,9 @@ function Feature() {
       {/* Content Section */}
       <motion.div
         className="w-full md:w-1/2 text-left space-y-6 flex flex-col justify-start"
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-5xl font-extrabold 
@@ -98,4 +101,4 @@ function Feature() {
   );
 }
 
-export default Feature;
+export default React.memo(Feature) ;
