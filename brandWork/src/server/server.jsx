@@ -14,7 +14,7 @@ export default function CTA() {
   e.preventDefault();
 
   const endpoint = isLogin ? "login" : "register";
-  const url = `http://localhost:5000/api/${endpoint}`;
+  const url = `http://localhost:3000/api/${endpoint}`;
 
   // validation
   if (!formData.email || !formData.password) {
@@ -39,11 +39,12 @@ export default function CTA() {
       alert(data.message || data.error || "Request failed");
       return;
     }
-
+ 
     if (isLogin) {
       // store JWT in localStorage
       localStorage.setItem("auth_token", data.token);
       alert("Login successful — token stored");
+      window.location.href = "/dashboard";
     } else {
       alert("Registration successful — you can now log in");
       setIsLogin(true);

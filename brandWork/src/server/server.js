@@ -7,6 +7,7 @@ import User from "./userModel.js";
 
 const app = express();
 const SECRET_KEY = "KimuyuLoveSecure7755.Key2025#Auth";
+const router = express.Router();
 
 // ===== Middleware =====
 app.use(cors());
@@ -27,17 +28,21 @@ app.use(express.json({
 
 // ===== MongoDB Connection =====
 mongoose.connect(
-  "mongodb+srv://-------------------------------------------------------
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://kimuyuboh_db_user:Love7755.@cluster0.uwybmsp.mongodb.net/",
 )
-.then(() => console.log("✅ MongoDB Connected"))
-.catch(err => console.error("❌ MongoDB Error:", err));
+.then(() => console.log(" Connected to MongoDB Atlas"))
+.catch(err => console.error(" MongoDB connection error:", err));
+
 
 // ===== JWT Auth Middleware =====
 const verifyToken = (req, res, next) => {
-  const auth = req.headers.authorization;
-  if (!auth) return res.status(403).json({ message: "No token provided" });
-  const token = auth.split(" ")[1];
+  const authHeader = req.headers.authorization;
+  if (!authHeader) 
+    return res.status(403).json({ message: "No token provided" }
+  );
+
+  const token = authHeader.split(" ")[1];
+
   try {
     const decoded = jwt.verify(token, SECRET_KEY);
     req.user = decoded;
@@ -47,64 +52,41 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-// ===== Routes =====
+// Mount the router with /api prefix
+app.use('/api', router);  
 
-// Registration
-app.post("/api/register", async (req, res) => {
-  try {
-    const { email, password, confirmPassword } = req.body;
-    if (!email || !password || !confirmPassword)
-      return res.status(400).json({ message: "All fields required" });
 
-    if (password !== confirmPassword)
-      return res.status(400).json({ message: "Passwords do not match" });
-
-    const exists = await User.findOne({ email });
-    if (exists) return res.status(409).json({ message: "User already exists" });
-
-    const hashed = await bcrypt.hash(password, 12);
-    const user = new User({ email, password: hashed });
-    await user.save();
-
-    res.status(201).json({ message: "Registration successful" });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+// Register route
+router.post('/register', async (req, res) => {
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ name, email, password: hashedPassword });
+    await newUser.save();
+    res.json({ messege: 'User registered successfully'});
 });
 
-// Login
-app.post("/api/login", async (req, res) => {
-  try {
+// Login route
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    if (!email || !password)
-      return res.status(400).json({ message: "Email and password required" });
-
     const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: "User not found" });
+    if (!user) return res.status(404).json({ message: 'User not found' });
 
     const valid = await bcrypt.compare(password, user.password);
-    if (!valid) return res.status(401).json({ message: "Invalid credentials" });
+    if (!valid) return res.status(401).json({ message: 'Invalid credentials' });
 
-    const token = jwt.sign(
-      { id: user._id, email: user.email },
-      SECRET_KEY,
-      { expiresIn: "2h" }
-    );
-
-    res.status(200).json({ token, message: "Login successful" });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+    const token = jwt.sign({ Id: user._id, email: user.email }, SECRET_KEY, { expiresIn: '900s' });
+    res.json({ token, name: user.name });
 });
 
-// Protected route
-app.get("/api/protected", verifyToken, (req, res) => {
-  res.json({
-    message: "Access granted",
-    user: req.user,
-  });
+
+// protected route
+router.get('/protected', verifyToken, (req, res) => {
+    res.json({ message: 'Access granted', user: req.user });
 });
 
-// ===== Start Server =====
-const PORT = 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+
+// start server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port http://localhost:${PORT}`);
+});
