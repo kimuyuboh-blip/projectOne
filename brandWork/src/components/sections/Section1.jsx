@@ -13,7 +13,7 @@ function Section1() {
   return (
     <section
       className="relative w-full flex flex-col md:flex-row items-start justify-between px-6 md:px-16 lg:px-24 py-20 
-      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
+      bg-linear-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E] 
       text-[#1E1E1E] dark:text-[#F1F1F1] transition-colors duration-500 overflow-hidden"
     >
@@ -21,7 +21,7 @@ function Section1() {
         {/* LEFT TEXT */}
         <div className="lg:col-span-4 space-y-6">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-            <span className="block bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent">
+            <span className="block bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent">
               Why Choose
             </span>
             <span className="block text-[#1E1E1E] dark:text-[#F1F1F1]">
@@ -62,7 +62,7 @@ function Section1() {
             {[...items, ...items].map((item, i) => (
               <div
                 key={i}
-                className="relative flex-shrink-0 w-[250px] h-[350px] rounded-3xl overflow-hidden border
+                className="relative shrink-0 w-[250px] h-[350px] rounded-3xl overflow-hidden border
                 border-[#D0D0D0]/50 dark:border-[#3D3D3D]/70 shadow-lg hover:shadow-xl transition-all duration-500"
               >
                 <img
@@ -70,7 +70,7 @@ function Section1() {
                   alt={item.title}
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent"></div>
                 <h3 className="absolute bottom-6 left-6 text-lg font-semibold text-white drop-shadow-md">
                   {item.title}
                 </h3>

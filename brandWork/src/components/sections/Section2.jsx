@@ -7,7 +7,7 @@ function AboutSection() {
     <section
       id="about"
       className="relative w-full py-20 px-6 md:px-16 lg:px-24 
-      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
+      bg-linear-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E] 
       text-[#1E1E1E] dark:text-[#F1F1F1] transition-colors duration-500 overflow-hidden"
     >
@@ -21,7 +21,7 @@ function AboutSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-extrabold 
-            bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent tracking-tight">
+            bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent tracking-tight">
             About Us
           </h2>
 
@@ -47,7 +47,7 @@ function AboutSection() {
         >
           <div className="relative w-full max-w-sm lg:max-w-md rounded-3xl overflow-hidden 
             shadow-2xl border border-gray-800/60 dark:border-gray-700/50 
-            bg-gradient-to-br from-gray-900/80 via-gray-950/90 to-black/95 
+            bg-linear-to-br from-gray-900/80 via-gray-950/90 to-black/95 
             dark:from-gray-900/80 dark:via-gray-950/90 dark:to-black/95 
             group transform transition-transform duration-500 hover:scale-[1.02]">
             <img
@@ -55,7 +55,7 @@ function AboutSection() {
               alt="An open Samsung s10 phone."
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>
            
           </div>
         </motion.div>

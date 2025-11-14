@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col items-center justify-center text-center min-h-screen w-full bg-cover bg-center bg-no-repeat transition-colors duration-500 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+      className="relative flex flex-col items-center justify-center text-center min-h-screen w-full bg-cover bg-center bg-no-repeat transition-colors duration-500 overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-black"
     ><img 
       src={heroBg}
       alt="Image of a Technician opening a laptop backcase."
@@ -23,10 +23,10 @@ function Hero() {
         transition={{ duration: 0.9 }}
       >
         {/* Headings */}
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(29,233,182,0.3)]">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(29,233,182,0.3)]">
           Fix it Fast.
         </h1>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-[#1DE9B6] via-[#3A9BD9] to-[#1DE9B6] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(58,155,217,0.3)]">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-linear-to-r from-[#1DE9B6] via-[#3A9BD9] to-[#1DE9B6] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(58,155,217,0.3)]">
           Fix it Right.
         </h1>
 
@@ -49,7 +49,7 @@ function Hero() {
           }}
           whileTap={{ scale: 0.96 }}
           className="px-8 py-4 rounded-full font-semibold text-lg tracking-wide transition-all duration-300
-            bg-gradient-to-r from-[#3A9BD9] to-[#1DE9B6] text-[#1E1E1E]
+            bg-linear-to-r from-[#3A9BD9] to-[#1DE9B6] text-[#1E1E1E]
             dark:from-[#00B8C9] dark:to-[#1DE9B6]
             hover:from-[#1DE9B6] hover:to-[#3A9BD9]
             border border-white/20 shadow-md"

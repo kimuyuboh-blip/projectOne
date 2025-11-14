@@ -68,7 +68,7 @@ function Dashboard() {
         border border-[#D8D8D8]/60 dark:border-[#3D3D3D]/60
         rounded-3xl p-16 shadow-xl text-center"
       >
-        <h1 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-[#3A9BD9] via-[#00B8C9] to-[#1DE9B6] bg-clip-text text-transparent">
+        <h1 className="text-4xl font-extrabold mb-4 bg-linear-to-r from-[#3A9BD9] via-[#00B8C9] to-[#1DE9B6] bg-clip-text text-transparent">
           Welcome, {user.email.split("@")[0]}  
         </h1>
 

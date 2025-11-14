@@ -7,7 +7,7 @@ function Feature() {
     <section
       id="features"
       className="relative w-full flex flex-col md:flex-row items-start justify-between px-6 md:px-16 lg:px-24 py-20 
-      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
+      bg-linear-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E] 
       text-[#1E1E1E] dark:text-[#F1F1F1] transition-colors duration-500 overflow-hidden"
     >
@@ -30,7 +30,7 @@ function Feature() {
             group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute inset-0 rounded-3xl 
-          bg-gradient-to-tr from-[#3A9BD9]/10 to-[#1DE9B6]/10 
+          bg-linear-to-tr from-[#3A9BD9]/10 to-[#1DE9B6]/10 
           opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
       </motion.div>
@@ -44,7 +44,7 @@ function Feature() {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl md:text-5xl font-extrabold 
-        bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
+        bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
         bg-clip-text text-transparent tracking-tight">
           Our Services
         </h2>
@@ -56,7 +56,7 @@ function Feature() {
         <div className="space-y-4">
           {/* Phone Repair */}
           <div className="flex gap-4 group hover:bg-white/5 dark:hover:bg-[#3D3D3D]/20 p-3 rounded-lg transition-colors duration-300">
-            <div className="text-2xl text-[#1DE9B6] flex-shrink-0">✓</div>
+            <div className="text-2xl text-[#1DE9B6] shrink-0">✓</div>
             <div>
               <h3 className="text-xl md:text-2xl font-semibold">Phone Repair</h3>
               <p className="text-[#505050] dark:text-[#B5B5B5] mt-2">
@@ -68,7 +68,7 @@ function Feature() {
 
           {/* Laptop Repair */}
           <div className="flex gap-4 group hover:bg-white/5 dark:hover:bg-[#3D3D3D]/20 p-3 rounded-lg transition-colors duration-300">
-            <div className="text-2xl text-[#1DE9B6] flex-shrink-0">✓</div>
+            <div className="text-2xl text-[#1DE9B6] shrink-0">✓</div>
             <div>
               <h3 className="text-xl md:text-2xl font-semibold">Laptop Repair</h3>
               <p className="text-[#505050] dark:text-[#B5B5B5] mt-2">
@@ -80,7 +80,7 @@ function Feature() {
 
           {/* Diagnostics & Optimization */}
           <div className="flex gap-4 group hover:bg-white/5 dark:hover:bg-[#3D3D3D]/20 p-3 rounded-lg transition-colors duration-300">
-            <div className="text-2xl text-[#1DE9B6] flex-shrink-0">✓</div>
+            <div className="text-2xl text-[#1DE9B6] shrink-0">✓</div>
             <div>
               <h3 className="text-xl md:text-2xl font-semibold">Diagnostics & Optimization</h3>
               <p className="text-[#505050] dark:text-[#B5B5B5] mt-2">
@@ -94,7 +94,7 @@ function Feature() {
 
       {/* Decorative Glow */}
       <div className="absolute -bottom-20 -right-10 w-72 h-72 
-      bg-gradient-to-tr from-[#3A9BD9]/20 to-[#1DE9B6]/20 
+      bg-linear-to-tr from-[#3A9BD9]/20 to-[#1DE9B6]/20 
       dark:from-[#3A9BD9]/10 dark:to-[#1DE9B6]/10 
       blur-[100px] rounded-full pointer-events-none"></div>
     </section>

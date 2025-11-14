@@ -14,7 +14,7 @@ function CTA() {
   return (
     <section
       className="relative flex flex-col md:flex-row items-center justify-center md:justify-between w-full
-      bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9]
+      bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9]
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E]
       text-[#1E1E1E] dark:text-[#F1F1F1]
       py-20 px-8 md:px-20 overflow-hidden transition-colors duration-500"

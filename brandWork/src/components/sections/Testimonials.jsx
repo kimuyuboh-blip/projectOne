@@ -45,7 +45,7 @@ function Testimonials() {
     <section
       id="testimonials"
       className="relative w-full py-20 px-6 md:px-16 lg:px-24 
-      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0]
+      bg-linear-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0]
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E]
       text-[#1E1E1E] dark:text-[#F1F1F1] overflow-hidden transition-colors duration-500"
     >
@@ -54,7 +54,7 @@ function Testimonials() {
         <div className="lg:col-span-7 flex flex-col justify-start relative">
           <h2
             className="text-3xl md:text-4xl font-extrabold 
-            bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
+            bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] 
             bg-clip-text text-transparent tracking-tight mb-6"
           >
             What Clients Say About Us
@@ -127,7 +127,7 @@ function Testimonials() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="lg:col-span-5 flex justify-center lg:justify-end self-start"
         >
-          <div className="w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden 
+          <div className="w-full max-w-md aspect-4/5 rounded-3xl overflow-hidden 
           shadow-2xl border border-[#C0C0C0]/40 dark:border-[#3D3D3D]/70 
           transform transition-transform duration-500 hover:scale-[1.03]">
             <img
@@ -142,7 +142,7 @@ function Testimonials() {
       {/* Decorative Glow */}
       <div
         className="absolute -bottom-24 right-8 w-64 h-64 
-        bg-gradient-to-tr from-[#3A9BD9]/20 to-[#1DE9B6]/20 
+        bg-linear-to-tr from-[#3A9BD9]/20 to-[#1DE9B6]/20 
         dark:from-[#3A9BD9]/10 dark:to-[#1DE9B6]/10 
         blur-[100px] rounded-full pointer-events-none"
       ></div>

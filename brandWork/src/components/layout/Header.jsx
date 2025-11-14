@@ -77,7 +77,7 @@ function Header() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <nav className="flex flex-col items-start p-6 space-y-6 font-semibold text-lg bg-gradient-to-r from-[#1DE9B6] via-[#3A9BD9] to-[#1DE9B6]">
+        <nav className="flex flex-col items-start p-6 space-y-6 font-semibold text-lg bg-linear-to-r from-[#1DE9B6] via-[#3A9BD9] to-[#1DE9B6]">
           <a href="#hero" onClick={() => setIsOpen(false)}>Home</a>
           <a href="#features" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#about" onClick={() => setIsOpen(false)}>About Us</a>

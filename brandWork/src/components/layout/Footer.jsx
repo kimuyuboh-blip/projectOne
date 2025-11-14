@@ -141,7 +141,7 @@ function Footer() {
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
         <p className="text-xs md:text-sm text-[#3A3A3A]/90 dark:text-[#B5B5B5]/90">
           © 2025{" "}
-          <span className="bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent font-semibold">
+          <span className="bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent font-semibold">
             Kimuyu TechWorks
           </span>{" "}
           - All Rights Reserved

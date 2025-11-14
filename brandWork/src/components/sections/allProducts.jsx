@@ -18,7 +18,7 @@ function AllProducts() {
     <section
       id="products"
       className="relative w-full py-20 px-6 md:px-16 lg:px-24 
-      bg-gradient-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
+      bg-linear-to-b from-[#F0F0F0] via-[#FAFAFA] to-[#F0F0F0] 
       dark:from-[#1E1E1E] dark:via-[#2C2C2C] dark:to-[#1E1E1E] 
       text-[#1E1E1E] dark:text-[#F1F1F1] transition-colors duration-500 overflow-hidden"
     >
@@ -34,7 +34,7 @@ function AllProducts() {
         className="text-center mb-16"
       >
         <h2 
-        className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent">
+        className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent">
           Our Products
         </h2>
         <p className="text-[#505050] dark:text-[#B5B5B5] max-w-sm leading-relaxed mx-auto">
@@ -68,7 +68,7 @@ function AllProducts() {
             {/* Add Button */}
             <button
               className="absolute bottom-4 right-4 w-9 h-9 flex items-center justify-center rounded-full 
-              bg-gradient-to-r from-[#3A9BD9] to-[#1DE9B6] 
+              bg-linear-to-r from-[#3A9BD9] to-[#1DE9B6] 
               text-black font-semibold hover:opacity-80 
               transition-all duration-300 shadow-md"
               aria-label="Add to Cart"
@@ -103,7 +103,7 @@ function AllProducts() {
           <span className="text-lg text-[#505050]">←</span>
         </button>
         <div className="flex gap-2">
-          <span className="w-2.5 h-2.5 bg-gradient-to-r from-[#3A9BD9] to-[#1DE9B6] rounded-full"></span>
+          <span className="w-2.5 h-2.5 bg-linear-to-r from-[#3A9BD9] to-[#1DE9B6] rounded-full"></span>
           <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
           <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
           <span className="w-2.5 h-2.5 bg-[#505050]/30 rounded-full"></span>
