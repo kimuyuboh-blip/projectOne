@@ -4,10 +4,10 @@ import { ArrowRight } from "lucide-react";
 
 function Section1() {
   const items = [
-    { title: "Smartphone and Iphone Repair", img: "/src/assets/store/smartphone.webp" },
-    { title: "Screen Replacement", img: "/src/assets/store/screen.webp" },
-    { title: "Laptop Repair", img: "/src/assets/store/2.webp" },
-    { title: "Windows Installation", img: "/src/assets/store/install.webp" },
+    { title: "Smartphone and Iphone Repair", img: "/src/assets/smartphone.webp" },
+    { title: "Screen Replacement", img: "/src/assets/screen.webp" },
+    { title: "Laptop Repair", img: "/src/assets/2.webp" },
+    { title: "Windows Installation", img: "/src/assets/install.webp" },
   ];
 
   return (

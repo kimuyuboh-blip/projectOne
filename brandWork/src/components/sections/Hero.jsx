@@ -96,6 +96,7 @@ function Hero() {
       </motion.div>
       <div className="section-glow section-glow-blue -bottom-32 left-10"></div>
       <div className="section-glow section-glow-blue top-20 right-20"></div>
+            
 
     </section>
   );
