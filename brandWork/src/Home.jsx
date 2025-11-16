@@ -7,7 +7,7 @@ import Section2 from './components/sections/Section2.jsx'
 import AllProducts from './components/sections/allProducts.jsx'
 import Testimonials from './components/sections/Testimonials.jsx'
 import CTA from './components/sections/CTA.jsx'
-import Server from './server/server.jsx'
+import Server from './components/sections/server.jsx'
 import Footer from './components/layout/Footer.jsx'
 
 
