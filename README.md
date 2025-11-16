@@ -1,6 +1,6 @@
 # Kimuyu TechWorks
 
-<a href="project-one-nrgc.vercel.app"><b>project-one-nrgc.vercel.app</b></a>
+<a href="project-one-nrgc.vercel.app">project-one-nrgc.vercel.app</a>
 
 
 ## Project Overview
