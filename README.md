@@ -1,6 +1,6 @@
 # Kimuyu TechWorks
 
-<a href="https://project-one-nrgc-git-main-carlos-projects-9a0e3e2a.vercel.app/">project-one-nrgc.vercel.app</a>
+<a href="https://project-one-nrgc-git-main-carlos-projects-9a0e3e2a.vercel.app/">Kimuyu TechWorks Link</a>
 
 
 ## Project Overview
