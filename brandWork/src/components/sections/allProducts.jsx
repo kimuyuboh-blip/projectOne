@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 function AllProducts() {
   const products = [
-    { name: "Internal Battery", price: "Ksh 1500", oldPrice: "Ksh 1800", img: "/src/assets/battery.webp" },
-    { name: "Camera Glass", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/camera-glass.webp" },
-    { name: "Camera", price: "Ksh 1000", oldPrice: "Ksh 1500", img: "/src/assets/camera.webp" },
-    { name: "Charging Plate", price: "Ksh 800", oldPrice: "Ksh 1000", img: "/src/assets/charging-plate.webp" },
-    { name: "Earpiece", price: "Ksh 400", oldPrice: "Ksh 600", img: "/src/assets/earpiece.webp" },
-    { name: "Sim Tray", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/simtray.webp" },
-    { name: "Complete Screen", price: "Ksh 2000", oldPrice: "Ksh 2500", img: "/src/assets/screen.webp" },
-    { name: "Keypad Screen", price: "Ksh 300", oldPrice: "Ksh 500", img: "/src/assets/tululu.webp" },
+    { name: "Internal Battery", price: "Ksh 1500", oldPrice: "Ksh 1800", img: "/battery.webp" },
+    { name: "Camera Glass", price: "Ksh 300", oldPrice: "Ksh 500", img: "/camera-glass.webp" },
+    { name: "Camera", price: "Ksh 1000", oldPrice: "Ksh 1500", img: "/camera.webp" },
+    { name: "Charging Plate", price: "Ksh 800", oldPrice: "Ksh 1000", img: "/charging-plate.webp" },
+    { name: "Earpiece", price: "Ksh 400", oldPrice: "Ksh 600", img: "/earpiece.webp" },
+    { name: "Sim Tray", price: "Ksh 300", oldPrice: "Ksh 500", img: "/simtray.webp" },
+    { name: "Complete Screen", price: "Ksh 2000", oldPrice: "Ksh 2500", img: "/screen.webp" },
+    { name: "Keypad Screen", price: "Ksh 300", oldPrice: "Ksh 500", img: "/tululu.webp" },
   ];
 
   return (

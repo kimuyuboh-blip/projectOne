@@ -15,7 +15,7 @@ function CTA() {
   e.preventDefault();
 
   const endpoint = isLogin ? "login" : "register";
-  const url = `https://server-cwr7.onrender.com`;
+  const url = `http://localhost:3000/api/${endpoint}`;
 
   // validation
   if (!formData.email || !formData.password) {
