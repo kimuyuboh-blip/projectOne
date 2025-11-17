@@ -11,6 +11,7 @@ function Hero() {
       src={heroBg}
       alt="Image of a Technician opening a laptop backcase."
       className="absolute inset-0 w-full h-full object-cover opacity-40"
+      fetchpriority="high"     // BEST for hero images
       loading="eager"
       decoding="async" 
       />
