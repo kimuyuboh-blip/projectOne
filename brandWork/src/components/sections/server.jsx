@@ -44,7 +44,7 @@ function CTA() {
     if (isLogin) {
       // store JWT in localStorage
       localStorage.setItem("auth_token", data.token);
-      alert("Login successful — token stored");
+      alert("Login successful");
       window.location.href = "/dashboard";
     } else {
       alert("Registration successful — you can now log in");
