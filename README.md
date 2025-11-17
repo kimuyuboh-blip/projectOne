@@ -90,7 +90,7 @@ npm install
 npm run dev
 
 # Server side
-cd projectOne/brandWork/server
+cd projectOne/server
 
 # Run server
 node server.js
