@@ -13,7 +13,10 @@ function Dashboard() {
 
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/protected", {
+        const API_URL = import.meta.env.VITE_API_URL;
+
+        const res = await fetch(`${API_URL}/api/protected`, {
+
           headers: {
             Authorization: `Bearer ${token}`,
           },

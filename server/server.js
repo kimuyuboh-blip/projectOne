@@ -1,92 +1,54 @@
 import express from "express";
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import cors from "cors";
-import User from "./userModel.js";
+import {
+  register,
+  login,
+  refresh,
+  logout,
+  protectedRoute,
+} from "./controllers/authController.js";
+import { verifyAccessToken } from "./middleware/authMiddleware.js";
+
+dotenv.config();
 
 const app = express();
-const SECRET_KEY = "KimuyuLoveSecure7755.Key2025#Auth";
-const router = express.Router();
+const PORT = process.env.PORT || 3000;
 
-// ===== Middleware =====
-app.use(cors());
-app.use(express.json({
-  verify: (req, res, buf, encoding) => {
-    try {
-      JSON.parse(buf);
-    } catch (err) {
-      res.status(400).json({
-        error: "Invalid JSON format",
-        details: err.message,
-        received: buf.toString(),
-      });
-      throw err;
-    }
-  }
+app.use(express.json());
+app.use(cookieParser());
+
+// configure CORS - allow your frontend domains
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "https://project-one-nrgc-git-main-carlos-projects-9a0e3e2a.vercel.app/",
+  "http://localhost:5173",
+  "https://projectone-q11o.onrender.com"
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // allow requests with no origin (mobile apps, curl, server-to-server)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    callback(new Error("CORS not allowed"));
+  },
+  credentials: true,
 }));
 
-// ===== MongoDB Connection =====
-mongoose.connect(
-  "mongodb+srv://kimuyuboh_db_user:Love7755.@cluster0.uwybmsp.mongodb.net/",
-)
-.then(() => console.log(" Connected to MongoDB Atlas"))
-.catch(err => console.error(" MongoDB connection error:", err));
+mongoose.connect(process.env.MONGO_URL, { dbName: "kimuyu_db" })
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
+// Auth routes
+app.post("/api/register", register);
+app.post("/api/login", login);
+app.get("/api/refresh", refresh);
+app.post("/api/logout", logout);
 
-// ===== JWT Auth Middleware =====
-const verifyToken = (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) 
-    return res.status(403).json({ message: "No token provided" }
-  );
+// protected
+app.get("/api/protected", verifyAccessToken, protectedRoute);
 
-  const token = authHeader.split(" ")[1];
-
-  try {
-    const decoded = jwt.verify(token, SECRET_KEY);
-    req.user = decoded;
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: "Invalid or expired token" });
-  }
-};
-
-// Mount the router with /api prefix
-app.use('/api', router);  
-
-
-// Register route
-router.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ name, email, password: hashedPassword });
-    await newUser.save();
-    res.json({ messege: 'User registered successfully'});
-});
-
-// Login route
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user) return res.status(404).json({ message: 'User not found' });
-
-    const valid = await bcrypt.compare(password, user.password);
-    if (!valid) return res.status(401).json({ message: 'Invalid credentials' });
-
-    const token = jwt.sign({ Id: user._id, email: user.email }, SECRET_KEY, { expiresIn: '900s' });
-    res.json({ token, name: user.name });
-});
-
-
-// protected route
-router.get('/protected', verifyToken, (req, res) => {
-    res.json({ message: 'Access granted', user: req.user });
-});
-
-
-// start server
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on port http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server listening on ${PORT}`));

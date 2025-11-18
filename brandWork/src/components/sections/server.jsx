@@ -1,7 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, UserPlus, LogIn } from "lucide-react";
+import api from "/src/api/axios";
+import { useAuth } from "/src/contexts/AuthContext";
+
 
 function CTA() {
   const [isLogin, setIsLogin] = useState(true);
@@ -9,13 +11,16 @@ function CTA() {
     email: "",
     password: "",
     confirmPassword: "",
+    name: "",
   });
+
+  const {login} = useAuth();
 
   const handleSubmit = async (e) => {
   e.preventDefault();
 
   const endpoint = isLogin ? "login" : "register";
-  const url = `http://localhost:3000/api/${endpoint}`;
+  const url = `${API_URL}/api/${endpoint}`;
 
   // validation
   if (!formData.email || !formData.password) {
@@ -27,33 +32,36 @@ function CTA() {
     return;
   }
 
-  try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+ try {
+      const endpoint = isLogin ? "/api/login" : "/api/register";
+      const payload = isLogin
+        ? { email: formData.email, password: formData.password }
+        : { name: formData.name, email: formData.email, password: formData.password };
 
-    const data = await res.json();
+        const res = await api.post(endpoint, payload);
 
-    if (!res.ok) {
-      alert(data.message || data.error || "Request failed");
-      return;
+        if (!res || res.status >= 400) {
+        alert(res?.data?.message || "Error");
+        return;
     }
  
     if (isLogin) {
-      // store JWT in localStorage
-      localStorage.setItem("auth_token", data.token);
-      alert("Login successful");
-      window.location.href = "/dashboard";
-    } else {
-      alert("Registration successful — you can now log in");
-      setIsLogin(true);
-    }
-  } catch (err) {
-    console.error(err);
-    alert("Network or server error");
-  }
+        const { accessToken, user } = res.data;
+        if (!accessToken) {
+          alert("Login failed: no token");
+          return;
+        }
+        login(accessToken, user);
+        alert("Login successful");
+        window.location.href = "/dashboard";
+      } else {
+        alert("Registration successful — you can now log in");
+        setIsLogin(true);
+      }
+      } catch (err) {
+        console.error(err);
+        alert("Network or server error");
+      }
 };
 
 
@@ -154,25 +162,33 @@ function CTA() {
           </div>
 
           {!isLogin && (
-            <div>
-              <label
-                htmlFor="confirmPassword"
-                className="block text-sm font-semibold text-[#505050] dark:text-[#B5B5B5] mb-1"
-              >
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                name="confirmPassword"
-                id="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"
-                placeholder="Re-enter your password"
-                required
-              />
-            </div>
+            <>
+              <div>
+                <label htmlFor="name">Name</label>
+                <input name="name" value={formData.name} onChange={handleChange} />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="confirmPassword"
+                  className="block text-sm font-semibold text-[#505050] dark:text-[#B5B5B5] mb-1"
+                >
+                  Confirm Password
+                </label>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"
+                  placeholder="Re-enter your password"
+                  required
+                />
+              </div>
+            </>
           )}
+          
 
           <motion.button
             whileHover={{
