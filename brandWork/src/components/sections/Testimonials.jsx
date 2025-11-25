@@ -75,9 +75,11 @@ function Testimonials() {
                 <div className="flex items-center gap-4 mb-4">
                   <img
                     src={testimonials[index].img}
-                    srcSet={`${testimonials[index].img}?w=48 48w, ${testimonials[index].img}?w=96 96w`}
+                    srcSet={`${testimonials[index].img}?w=48&q=70 48w, ${testimonials[index].img}?w=96&q=80 96w`}
                     sizes="(max-width: 640px) 48px, 96px"
                     alt={testimonials[index].author}
+                    width="96"
+                    height="96"
                     className="w-12 h-12 rounded-full object-cover border border-[#C0C0C0]/50 dark:border-[#3D3D3D]/70 shadow-md"
                     loading="lazy"
                   />
@@ -137,9 +139,11 @@ function Testimonials() {
           transform transition-transform duration-500 hover:scale-[1.03]">
             <img
               src={testimonials[index].img}
-              srcSet={`${testimonials[index].img}?w=400 400w, ${testimonials[index].img}?w=600 600w, ${testimonials[index].img}?w=800 800w`}
-              sizes="(max-width: 640px) 400px, (max-width: 1024px) 600px, 800px"
+              srcSet={`${testimonials[index].img}?w=300&q=75 300w, ${testimonials[index].img}?w=500&q=80 500w, ${testimonials[index].img}?w=800&q=85 800w`}
+              sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 800px"
               alt={`Client testimonial image ${index + 1}`}
+              width="400"
+              height="500"
               className="w-full h-full object-cover object-center"
               loading="lazy"
             />

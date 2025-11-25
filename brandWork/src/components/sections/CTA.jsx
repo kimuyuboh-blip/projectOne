@@ -28,9 +28,11 @@ function CTA() {
       >
         <img
           src={logo}
-          srcSet={`${logo}?w=300 300w, ${logo}?w=500 500w, ${logo}?w=800 800w`}
-          sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 800px"
+          srcSet={`${logo}?w=200&q=70 200w, ${logo}?w=400&q=75 400w, ${logo}?w=600&q=85 600w`}
+          sizes="(max-width: 640px) 200px, (max-width: 1024px) 400px, 600px"
           alt="Kimuyu TechWorks logo"
+          width="800"
+          height="200"
           className="w-3/4 md:w-[70%] h-auto object-contain filter drop-shadow-xl"
           loading="lazy"
         />

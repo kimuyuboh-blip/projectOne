@@ -67,9 +67,11 @@ function Section1() {
               >
                 <img
                   src={item.img}
-                  srcSet={`${item.img}?w=250 250w, ${item.img}?w=400 400w, ${item.img}?w=600 600w`}
-                  sizes="(max-width: 640px) 250px, (max-width: 1024px) 400px, 600px"
+                  srcSet={`${item.img}?w=200&q=70 200w, ${item.img}?w=300&q=75 300w, ${item.img}?w=500&q=85 500w`}
+                  sizes="(max-width: 640px) 200px, (max-width: 1024px) 300px, 500px"
                   alt={item.title}
+                  width="250"
+                  height="350"
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500"
                   loading="lazy"
                 />

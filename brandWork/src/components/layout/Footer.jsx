@@ -61,7 +61,7 @@ function Footer() {
       {/* Header: Logo + Socials */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-10 group">
         <div className="flex items-center gap-2 transition-transform duration-300 group-hover:scale-105">
-          <h2 className="text-xl font-semibold tracking-wide text-[#3A9BD9] dark:text-[#1DE9B6]">
+          <h2 className="text-xl font-semibold tracking-wide text-[#1D5A7F] dark:text-[#1DE9B6]">
             Kimuyu TechWorks
           </h2>
         </div>

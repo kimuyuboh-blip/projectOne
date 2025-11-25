@@ -52,9 +52,11 @@ function AboutSection() {
             group transform transition-transform duration-500 hover:scale-[1.02]">
             <img
               src={sectionImg}
-              srcSet={`${sectionImg}?w=400 400w, ${sectionImg}?w=768 768w, ${sectionImg}?w=1024 1024w`}
-              sizes="(max-width: 640px) 400px, (max-width: 1024px) 768px, 1024px"
+              srcSet={`${sectionImg}?w=300&q=75 300w, ${sectionImg}?w=500&q=80 500w, ${sectionImg}?w=768&q=85 768w`}
+              sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 768px"
               alt="An open Samsung s10 phone."
+              width="400"
+              height="600"
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>

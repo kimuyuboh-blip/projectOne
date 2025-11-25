@@ -60,9 +60,11 @@ function AllProducts() {
             <div className="w-full aspect-square flex items-center justify-center bg-[#1A1A1A]/60">
               <img
                 src={product.img}
-                srcSet={`${product.img}?w=150 150w, ${product.img}?w=250 250w, ${product.img}?w=400 400w`}
-                sizes="(max-width: 640px) 150px, (max-width: 1024px) 250px, 400px"
+                srcSet={`${product.img}?w=120&q=70 120w, ${product.img}?w=200&q=75 200w, ${product.img}?w=300&q=80 300w`}
+                sizes="(max-width: 640px) 120px, (max-width: 1024px) 200px, 300px"
                 alt={product.name}
+                width="400"
+                height="400"
                 className="w-2/3 h-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
