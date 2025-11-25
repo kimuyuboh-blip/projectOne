@@ -52,7 +52,7 @@ function AboutSection() {
             group transform transition-transform duration-500 hover:scale-[1.02]">
             <img
               src={sectionImg}
-              srcSet={`${sectionImg}?w=300&q=75 300w, ${sectionImg}?w=500&q=80 500w, ${sectionImg}?w=768&q=85 768w`}
+              srcSet={`${sectionImg}?w=300&q=60 300w, ${sectionImg}?w=500&q=65 500w, ${sectionImg}?w=768&q=70 768w`}
               sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 768px"
               alt="An open Samsung s10 phone."
               width="400"

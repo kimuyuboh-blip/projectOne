@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
+    // Optimize bundle
+    target: 'esnext',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -14,6 +16,11 @@ export default defineConfig({
           'http': ['axios']
         }
       }
-    }
+    },
+    // Use esbuild for faster minification (default)
+    minify: 'esbuild',
+    // Optimize chunk sizes
+    chunkSizeWarningLimit: 500,
+    sourcemap: false
   }
 })

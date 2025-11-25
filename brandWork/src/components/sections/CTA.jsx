@@ -28,7 +28,7 @@ function CTA() {
       >
         <img
           src={logo}
-          srcSet={`${logo}?w=200&q=70 200w, ${logo}?w=400&q=75 400w, ${logo}?w=600&q=85 600w`}
+          srcSet={`${logo}?w=200&q=60 200w, ${logo}?w=400&q=65 400w, ${logo}?w=600&q=70 600w`}
           sizes="(max-width: 640px) 200px, (max-width: 1024px) 400px, 600px"
           alt="Kimuyu TechWorks logo"
           width="800"
