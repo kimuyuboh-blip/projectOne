@@ -60,6 +60,9 @@ function CTA() {
         >
           <input
             type="email"
+            id="newsletter-email"
+            name="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email address"

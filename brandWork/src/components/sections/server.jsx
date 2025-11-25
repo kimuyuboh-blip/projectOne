@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, UserPlus, LogIn } from "lucide-react";
-import api from "/src/api/axios";
-import { useAuth } from "/src/contexts/AuthContext";
+import api from "../../api/axios";
+import { useAuth } from "../../contexts/AuthContext";
 
 
 function CTA() {
@@ -18,9 +18,6 @@ function CTA() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
-
-  const endpoint = isLogin ? "login" : "register";
-  const url = `${API_URL}/api/${endpoint}`;
 
   // validation
   if (!formData.email || !formData.password) {
@@ -59,8 +56,8 @@ function CTA() {
         setIsLogin(true);
       }
       } catch (err) {
-        console.error(err);
-        alert("Network or server error");
+        console.error("Error details:", err.response?.data || err.message);
+        alert(err.response?.data?.message || "Network or server error");
       }
 };
 
@@ -134,6 +131,7 @@ function CTA() {
               type="email"
               name="email"
               id="email"
+              autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"
@@ -153,6 +151,7 @@ function CTA() {
               type="password"
               name="password"
               id="password"
+              autoComplete="current-password"
               value={formData.password}
               onChange={handleChange}
               className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"
@@ -164,8 +163,18 @@ function CTA() {
           {!isLogin && (
             <>
               <div>
-                <label htmlFor="name">Name</label>
-                <input name="name" value={formData.name} onChange={handleChange} />
+                <label htmlFor="name" className="block text-sm font-semibold text-[#505050] dark:text-[#B5B5B5] mb-1">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"
+                  placeholder="Enter your full name"
+                  required
+                />
               </div>
 
               <div>
@@ -179,6 +188,7 @@ function CTA() {
                   type="password"
                   name="confirmPassword"
                   id="confirmPassword"
+                  autoComplete="new-password"
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   className="block w-full px-4 py-2.5 bg-[#F0F0F0] dark:bg-[#1E1E1E] border border-[#D8D8D8]/70 dark:border-[#3D3D3D] rounded-xl focus:ring-2 focus:ring-[#00B8C9] focus:outline-none text-[#1E1E1E] dark:text-[#F1F1F1] placeholder-[#505050]/60 dark:placeholder-[#B5B5B5]/50"

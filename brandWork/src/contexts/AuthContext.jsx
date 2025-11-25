@@ -21,7 +21,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchProfile();
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      fetchProfile();
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   const login = (accessToken, userData) => {
