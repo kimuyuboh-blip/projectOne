@@ -67,8 +67,11 @@ function Section1() {
               >
                 <img
                   src={item.img}
+                  srcSet={`${item.img}?w=250 250w, ${item.img}?w=400 400w, ${item.img}?w=600 600w`}
+                  sizes="(max-width: 640px) 250px, (max-width: 1024px) 400px, 600px"
                   alt={item.title}
                   className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent"></div>
                 <h3 className="absolute bottom-6 left-6 text-lg font-semibold text-white drop-shadow-md">

@@ -28,8 +28,11 @@ function CTA() {
       >
         <img
           src={logo}
+          srcSet={`${logo}?w=300 300w, ${logo}?w=500 500w, ${logo}?w=800 800w`}
+          sizes="(max-width: 640px) 300px, (max-width: 1024px) 500px, 800px"
           alt="Kimuyu TechWorks logo"
           className="w-3/4 md:w-[70%] h-auto object-contain filter drop-shadow-xl"
+          loading="lazy"
         />
       </motion.div>
 

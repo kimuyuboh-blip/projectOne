@@ -9,6 +9,8 @@ function Hero() {
       className="relative flex flex-col items-center justify-center text-center min-h-screen w-full bg-cover bg-center bg-no-repeat transition-colors duration-500 overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-black"
     ><img 
       src={heroBg}
+      srcSet={`${heroBg}?w=320 320w, ${heroBg}?w=768 768w, ${heroBg}?w=1440 1440w, ${heroBg}?w=1920 1920w`}
+      sizes="(max-width: 640px) 320px, (max-width: 768px) 768px, (max-width: 1440px) 1440px, 1920px"
       alt="Image of a Technician opening a laptop backcase."
       className="absolute inset-0 w-full h-full object-cover opacity-40"
       fetchPriority="high"     // BEST for hero images
