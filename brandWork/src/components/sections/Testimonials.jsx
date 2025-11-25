@@ -75,7 +75,7 @@ function Testimonials() {
                 <div className="flex items-center gap-4 mb-4">
                   <img
                     src={testimonials[index].img}
-                    srcSet={`${testimonials[index].img}?w=96&q=65 96w, ${testimonials[index].img}?w=192&q=75 192w`}
+                    srcSet={`${testimonials[index].img}?w=96&q=50 96w, ${testimonials[index].img}?w=192&q=55 192w`}
                     sizes="(max-width: 640px) 96px, 192px"
                     alt={testimonials[index].author}
                     width="96"
@@ -139,7 +139,7 @@ function Testimonials() {
           transform transition-transform duration-500 hover:scale-[1.03]">
             <img
               src={testimonials[index].img}
-              srcSet={`${testimonials[index].img}?w=640&q=60 640w, ${testimonials[index].img}?w=1024&q=65 1024w`}
+              srcSet={`${testimonials[index].img}?w=640&q=45 640w, ${testimonials[index].img}?w=1024&q=50 1024w`}
               sizes="(max-width: 640px) 640px, (max-width: 1023px) 1024px, 100vw"
               alt={`Client testimonial image ${index + 1}`}
               width="400"

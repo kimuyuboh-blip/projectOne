@@ -67,7 +67,7 @@ function Section1() {
               >
                 <img
                   src={item.img}
-                  srcSet={`${item.img}?w=400&q=60 400w, ${item.img}?w=640&q=65 640w`}
+                  srcSet={`${item.img}?w=400&q=45 400w, ${item.img}?w=640&q=50 640w`}
                   sizes="(max-width: 640px) 400px, (max-width: 1023px) 640px, 800px"
                   alt={item.title}
                   width="250"
