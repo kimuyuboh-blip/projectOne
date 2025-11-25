@@ -216,7 +216,7 @@ function CTA() {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="text-[#3A9BD9] hover:text-[#00B8C9] font-medium transition-all duration-200"
+              className="text-[#1D5A7F] hover:text-[#3A9BD9] dark:text-[#1DE9B6] dark:hover:text-[#00B8C9] font-medium transition-all duration-200"
             >
               {isLogin
                 ? "Don't have an account? Sign up"
@@ -226,7 +226,7 @@ function CTA() {
         </motion.form>
 
         {/* Footer */}
-        <p className="mt-10 text-center text-xs text-[#505050]/80 dark:text-[#B5B5B5]/60 italic">
+        <p className="mt-10 text-center text-xs text-[#1E1E1E]/90 dark:text-[#B5B5B5] italic">
           <Lock className="inline-block w-4 h-4 mr-1 text-[#00B8C9]" />
           Secure access powered by Kimuyu TechWorks Systems.
         </p>

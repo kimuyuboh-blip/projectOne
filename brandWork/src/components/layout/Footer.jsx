@@ -71,21 +71,25 @@ function Footer() {
             {
               icon: <FaWhatsapp />,
               href: "https://wa.me/254720648214",
+              label: "WhatsApp",
             },
-            { icon: <FaInstagram />, href: "#" },
+            { icon: <FaInstagram />, href: "#", label: "Instagram" },
             {
               icon: <FaFacebookF />,
               href: "https://web.facebook.com/carlos.kimuyu.9",
+              label: "Facebook",
             },
-            { icon: <FaTwitter />, href: "https://twitter.com/@KimuyuCarlos" },
+            { icon: <FaTwitter />, href: "https://twitter.com/@KimuyuCarlos", label: "Twitter" },
             {
               icon: <FaGithub />,
               href: "https://github.com/kimuyuboh-blip",
+              label: "GitHub",
             },
           ].map((item, i) => (
             <a
               key={i}
               href={item.href}
+              aria-label={item.label}
               className="p-3 rounded-full bg-[#E5E5E5]/60 dark:bg-[#2A2A2A]/70
               hover:bg-[#3A9BD9]/80 dark:hover:bg-[#1DE9B6]/70 
               transition duration-300"
@@ -120,7 +124,7 @@ function Footer() {
 
             {/* Links */}
             <ul
-              className={`text-left space-y-2 text-[#3A3A3A]/90 dark:text-[#B5B5B5]/90 text-sm md:text-base
+              className={`text-left space-y-2 text-[#1E1E1E] dark:text-[#B5B5B5] text-sm md:text-base
               ${openSection === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0 sm:max-h-none sm:opacity-100"}
               transition-all duration-300 overflow-hidden`}
             >
@@ -139,7 +143,7 @@ function Footer() {
 
       {/* Bottom */}
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-        <p className="text-xs md:text-sm text-[#3A3A3A]/90 dark:text-[#B5B5B5]/90">
+        <p className="text-xs md:text-sm text-[#1E1E1E] dark:text-[#B5B5B5]">
           © 2025{" "}
           <span className="bg-linear-to-r from-[#3A9BD9] via-[#1DE9B6] to-[#3A9BD9] bg-clip-text text-transparent font-semibold">
             Kimuyu TechWorks

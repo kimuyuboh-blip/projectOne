@@ -84,6 +84,7 @@ function Hero() {
             ].map((item, idx) => (
               <div
                 key={idx}
+                role="listitem"
                 className="p-6 text-center hover:bg-white/5 dark:hover:bg-[#3D3D3D]/40 transition-colors duration-300"
               >
                 <div className="text-2xl md:text-3xl font-extrabold text-[#3A9BD9] dark:text-[#1DE9B6]">

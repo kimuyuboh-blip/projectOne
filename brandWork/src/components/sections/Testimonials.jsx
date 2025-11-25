@@ -102,6 +102,7 @@ function Testimonials() {
           <div className="flex items-center gap-6 mt-10">
             <button
               onClick={prev}
+              aria-label="Previous testimonial"
               className="p-3 rounded-full border border-[#D0D0D0] dark:border-[#3D3D3D] 
               hover:border-[#3A9BD9] dark:hover:border-[#1DE9B6] 
               hover:bg-[#F5F5F5] dark:hover:bg-[#3D3D3D]/40 
@@ -111,6 +112,7 @@ function Testimonials() {
             </button>
             <button
               onClick={next}
+              aria-label="Next testimonial"
               className="p-3 rounded-full border border-[#D0D0D0] dark:border-[#3D3D3D] 
               hover:border-[#3A9BD9] dark:hover:border-[#1DE9B6] 
               hover:bg-[#F5F5F5] dark:hover:bg-[#3D3D3D]/40 
