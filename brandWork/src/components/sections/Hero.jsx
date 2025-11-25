@@ -9,8 +9,8 @@ function Hero() {
       className="relative flex flex-col items-center justify-center text-center min-h-screen w-full bg-cover bg-center bg-no-repeat transition-colors duration-500 overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-black"
     ><img 
       src={heroBg}
-      srcSet={`${heroBg}?w=320&q=60 320w, ${heroBg}?w=640&q=65 640w, ${heroBg}?w=1024&q=70 1024w, ${heroBg}?w=1440&q=75 1440w`}
-      sizes="(max-width: 640px) 320px, (max-width: 1024px) 640px, (max-width: 1440px) 1024px, 1440px"
+      srcSet={`${heroBg}?w=640&q=60 640w, ${heroBg}?w=1024&q=65 1024w, ${heroBg}?w=1440&q=75 1440w`}
+      sizes="(max-width: 640px) 640px, (max-width: 1023px) 1024px, 1440px"
       alt="Image of a Technician opening a laptop backcase."
       width="1920"
       height="1080"

@@ -60,8 +60,8 @@ function AllProducts() {
             <div className="w-full aspect-square flex items-center justify-center bg-[#1A1A1A]/60">
               <img
                 src={product.img}
-                srcSet={`${product.img}?w=120&q=60 120w, ${product.img}?w=200&q=65 200w, ${product.img}?w=300&q=70 300w`}
-                sizes="(max-width: 640px) 120px, (max-width: 1024px) 200px, 300px"
+                srcSet={`${product.img}?w=300&q=60 300w, ${product.img}?w=500&q=65 500w`}
+                sizes="(max-width: 640px) 300px, (max-width: 1023px) 500px, 600px"
                 alt={product.name}
                 width="400"
                 height="400"
